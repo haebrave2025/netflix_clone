@@ -2,48 +2,45 @@ import React, {useState} from 'react';
 
 const App = () => {
 
+    const [movie, setMovie] = useState({})
 
-    // setAge 명령어를 통해서 age의 값을 변경할수있다
-    //useState 상태값 형태를 자주 볼것!
-    const [age, setAge] = useState(0)
-    const [name, setName] = useState("정해언")
+    const movieInfo =     {
+        "adult": false,
+        "backdrop_path": "/nKyBbFSooRPTJVqjrDteD1lF733.jpg",
+        "genre_ids": [
+            28,
+            12,
+            18
+        ],
+        "id": 1011477,
+        "original_language": "en",
+        "original_title": "Karate Kid: Legends",
+        "overview": "After a family tragedy, kung fu prodigy Li Fong is uprooted from his home in Beijing and forced to move to New York City with his mother. When a new friend needs his help, Li enters a karate competition – but his skills alone aren't enough. Li's kung fu teacher Mr. Han enlists original Karate Kid Daniel LaRusso for help, and Li learns a new way to fight, merging their two styles into one for the ultimate martial arts showdown.",
+        "popularity": 578.5995,
+        "poster_path": "/AEgggzRr1vZCLY86MAp93li43z.jpg",
+        "release_date": "2025-05-08",
+        "title": "Karate Kid: Legends",
+        "video": false,
+        "vote_average": 7.187,
+        "vote_count": 297
+    }
 
-    const myage = 18
 
-    //함수 형태 익힐것
-    //함수는 이벤트를 살행하는 최소 단위
-    const calculateAge = () => {
-        setAge(18)
-        console.log("데이터가 정상적으로 변경됨")
+    const getMovie = () => {
+      console.log(movie)
+        setMovie(movieInfo)
     }
     
-    const changeName = () => {
-        setName("jonghaeun")
-    }
 
     return (
         <div>
-            <h1>hanhaeuns project</h1>
-            <h2>저의 이름은 {name}입니다</h2>
-            <h3>나의 나이는 17살입니다</h3>
-            <button onClick={calculateAge}>내년나이계산</button>
-            <button onClick={changeName}>이름바꾸기</button>
-            <h3>내년에는 {age}살입니다</h3>
+         <h1>영화 제목은 {movie.title} 입니다</h1>
+         <h3>영화 설명 :{movie.overview}</h3>
+            <h4>영화 평점: {movie.vote_average}점</h4>
+            <h5>영화 출시일: {movie.release_date}</h5>
+            <button onClick={getMovie}>영화정보 불러오기</button>
         </div>
     );
 };
 
 export default App;
-
-
-
-
-// code빌드 순서 (컴퓨터가 코드를 어떻게 인식하는지 설명)
-// 1. 위에서 아래로 해석한다
-// 2. =을 기준으로 우측에서 좌측으로 인식한다
-// 3. .은 하위 메소드를 호출한다
-// 4. ,는 그리고로 해석한다
-
-
-
-// 5. {} 오브젝트 = 싱글, [] 배열 = 멀티
