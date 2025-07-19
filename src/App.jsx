@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Button, Card, Col, Container, Row} from "react-bootstrap";
 
 const movieList = [
     {
@@ -415,18 +416,31 @@ const App = () => {
 
 
     return (
-        <div>
-            {movies?.map((movie) => (
-                <div>
-                    <h3>{movie.title}</h3>
-                    <p>{movie.overview}</p>
-                    <p>{movie.release_date}</p>
-                    <p>{movie.vote_average}</p>
-                    <img src={"https://image.tmdb.org/t/p/w500"+movie.poster_path}/>
-                </div>
+        <Container>
+            <Row>
+                {movies?.map((movie) => (
+                    <Col className={"mt-5"}>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500"+movie.poster_path} />
+                            <Card.Body>
+                                <Card.Title>{movie.title}</Card.Title>
+                                <Card.Text>
+                                    {movie.overview.slice(0, 100)}
+                                </Card.Text>
+                                <Card.Text>
+                                  출시일: {movie.release_date}
+                                </Card.Text>
+                                <Card.Text>
+                                   평점: {movie.vote_average} / 10
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
 
-            ))}
-        </div>
+        </Container>
     );
 };
 
