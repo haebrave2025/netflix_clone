@@ -1,13 +1,14 @@
 import React from 'react';
-import ActingList from "./pages/ActingList.jsx";
-import MovieList from "./pages/MovieList.jsx";
+
 import {Outlet} from "react-router-dom";
+import Headers from "./components/Headers.jsx";
 
 const App = () => {
     return (
-        <div>
-       <Outlet/>
-        </div>
+        <>
+            <Headers/>
+            <Outlet/>
+        </>
     );
 };
 
