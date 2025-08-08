@@ -425,7 +425,10 @@ const MovieList = () => {
                         <Card.Text>
                             {movie.overview.slice(0,100)}
                         </Card.Text>
-                        <Link to={`/movie/${movie.id}`}>
+                        {movie?.genre_ids?.map((m) => (
+                            <h5>{m}</h5>
+                        ))}
+                        <Link to={`/detail/${movie.id}`}>
                             <Button variant="primary">자세히 보기</Button>
                         </Link>
                     </Card.Body>
