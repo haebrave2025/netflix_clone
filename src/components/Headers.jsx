@@ -9,7 +9,7 @@ const Headers = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="/">영화리스트</Nav.Link>
                     <Nav.Link href="/tv">티비리스트</Nav.Link>
-                    <Nav.Link href="/acting">베우리스트</Nav.Link>
+                    <Nav.Link href="/acting">배우리스트</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
