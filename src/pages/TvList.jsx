@@ -61,7 +61,7 @@ const TvList = () => {
                         {tv?.origin_country?.map((c) => (
                             <h5>{c}</h5>
                         ))}
-                        <Link to={`/detail/${tv.id}`}>
+                        <Link to={`/tv/${tv.id}`}>
                         <Button variant="primary">Go somewhere</Button>
                         </Link>
                     </Card.Body>

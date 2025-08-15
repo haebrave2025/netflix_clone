@@ -2,17 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
 
-const MovieDetail = () => {
+const TvDetail = () => {
 
     const {id} = useParams()
 
-    const [movie, setMovie] = useState({})
 
+    const [tv, setTv] = useState({})
 
-
-    const getMovieDetail = async () => {
-
-        const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
+    const getTvdetail = async () => {
+        // console.log("티비정보 가져옴")
+        const url = `https://api.themoviedb.org/3/tv/${id}?language=en-US`;
         const options = {
             method: 'GET',
             headers: {
@@ -21,28 +20,36 @@ const MovieDetail = () => {
             }
         };
 
+
+
         try {
             const result = await axios.get(url, options)
-            console.log("_______________",result.data)
-            setMovie(result.data)
+            console.log("_____________", result.data)
+            setTv(result.data)
         } catch (err) {
-            console.log("++++++++++++", err.message)
+            console.log("+++++++++++++", err.message)
         }
+
+
     }
 
 
 
     useEffect(() => {
-        getMovieDetail()
+        getTvdetail()
     }, []);
 
 
     return (
         <div>
-            <h1>{movie.title}</h1>
-            <p>{movie.overview}</p>
+           <h1>{tv.name}</h1>
+            <p>{tv.type}</p>
+            <img src = {"https://image.tmdb.org/t/p/w500"+tv.poster_path}/>
+            {tv?.origin_country?.map(t => (
+                <h5>{t}</h5>
+            ))}
         </div>
     );
 };
 
-export default MovieDetail;
+export default TvDetail;

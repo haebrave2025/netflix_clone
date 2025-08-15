@@ -8,6 +8,7 @@ import MovieList from "./pages/MovieList.jsx";
 import TvList from "./pages/TvList.jsx";
 import ActingList from "./pages/ActingList.jsx";
 import MovieDetail from "./pages/MovieDetail.jsx";
+import TvDetail from "./pages/TvDetail.jsx";
 
 
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "/detail/:id",
                 element: <MovieDetail/>
+            },
+            {
+                path: "/tv/:id",
+                element: <TvDetail/>
             }
         ]
     }
