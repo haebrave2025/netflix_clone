@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import MovieCard from "../components/MovieCard.jsx";
 
 
 const TvList = () => {
@@ -47,26 +48,7 @@ const TvList = () => {
         <Container>
             <Row>
             {tvs?.map((tv) => (
-                <Col className={"mt-5"}>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500"+tv.poster_path} />
-                    <Card.Body>
-                        <Card.Title>{tv.name}</Card.Title>
-                        <Card.Text>
-                            {tv.overview.slice(0,120)}
-                        </Card.Text>
-                        {tv?.genre_ids?.map((m) => (
-                            <h5>{m}</h5>
-                        ))}
-                        {tv?.origin_country?.map((c) => (
-                            <h5>{c}</h5>
-                        ))}
-                        <Link to={`/tv/${tv.id}`}>
-                        <Button variant="primary">Go somewhere</Button>
-                        </Link>
-                    </Card.Body>
-                </Card>
-                </Col>
+               <MovieCard movie={tv} isMovie={false}/>
             ))}
             </Row>
 

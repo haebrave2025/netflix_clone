@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import MovieCard from "../components/MovieCard.jsx";
 
 
 const MovieList = () => {
@@ -41,23 +42,7 @@ const MovieList = () => {
         <Container>
             <Row>
             {movies?.map((movie) => (
-                <Col className={"mt-5"}>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500"+movie.poster_path}/>
-                    <Card.Body>
-                        <Card.Title>{movie.title}</Card.Title>
-                        <Card.Text>
-                            {movie.overview.slice(0,100)}
-                        </Card.Text>
-                        {movie?.genre_ids?.map((m) => (
-                            <h5>{m}</h5>
-                        ))}
-                        <Link to={`/movie/${movie.id}`}>
-                            <Button variant="primary">자세히 보기</Button>
-                        </Link>
-                    </Card.Body>
-                </Card>
-                </Col>
+                <MovieCard movie={movie}/>
             ))}
             </Row>
         </Container>
