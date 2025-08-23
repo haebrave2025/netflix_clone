@@ -9,6 +9,8 @@ import TvList from "./pages/TvList.jsx";
 import ActingList from "./pages/ActingList.jsx";
 
 import Detail from "./pages/Detail.jsx";
+import Login from "./pages/auth/Login.jsx";
+import Signup from "./pages/auth/Signup.jsx";
 
 
 
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
             {
                 path: "/tv/:id",
                 element: <Detail/>
+            },
+            {
+                path: "/auth/login",
+                element: <Login/>
+            },
+            {
+                path: "/auth/signup",
+                element: <Signup/>
             }
         ]
     }
