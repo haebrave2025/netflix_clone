@@ -1,14 +1,19 @@
 import React from 'react';
 
-const ActingList = () => {
+const ActingDetail = () => {
+
+
 
 
 
     return (
         <div>
-            배우리스트
+
+        detail
+
+
         </div>
     );
 };
 
-export default ActingList;
+export default ActingDetail;

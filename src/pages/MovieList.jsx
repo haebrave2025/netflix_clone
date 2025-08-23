@@ -52,7 +52,7 @@ const MovieList = () => {
                         {movie?.genre_ids?.map((m) => (
                             <h5>{m}</h5>
                         ))}
-                        <Link to={`/detail/${movie.id}`}>
+                        <Link to={`/movie/${movie.id}`}>
                             <Button variant="primary">자세히 보기</Button>
                         </Link>
                     </Card.Body>

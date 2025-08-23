@@ -7,8 +7,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import MovieList from "./pages/MovieList.jsx";
 import TvList from "./pages/TvList.jsx";
 import ActingList from "./pages/ActingList.jsx";
-import MovieDetail from "./pages/MovieDetail.jsx";
-import TvDetail from "./pages/TvDetail.jsx";
+
+import Detail from "./pages/Detail.jsx";
 
 
 
@@ -30,12 +30,12 @@ const router = createBrowserRouter([
                 element: <ActingList/>
             },
             {
-                path: "/detail/:id",
-                element: <MovieDetail/>
+                path: "/movie/:id",
+                element: <Detail/>
             },
             {
                 path: "/tv/:id",
-                element: <TvDetail/>
+                element: <Detail/>
             }
         ]
     }
