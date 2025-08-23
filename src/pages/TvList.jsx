@@ -48,7 +48,7 @@ const TvList = () => {
         <Container>
             <Row>
             {tvs?.map((tv) => (
-               <MovieCard movie={tv} isMovie={false}/>
+               <MovieCard data={tv} isMovie={false}/>
             ))}
             </Row>
 

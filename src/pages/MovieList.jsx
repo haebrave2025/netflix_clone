@@ -42,7 +42,7 @@ const MovieList = () => {
         <Container>
             <Row>
             {movies?.map((movie) => (
-                <MovieCard movie={movie}/>
+             <MovieCard data={movie}/>
             ))}
             </Row>
         </Container>
