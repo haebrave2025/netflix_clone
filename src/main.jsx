@@ -11,6 +11,8 @@ import ActingList from "./pages/ActingList.jsx";
 import Detail from "./pages/Detail.jsx";
 import Login from "./pages/auth/Login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
+import ForgotPassword from "./pages/auth/ForgotPassword.jsx";
+import FindEmail from "./pages/auth/FindEmail.jsx";
 
 
 
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
             {
                 path: "/auth/signup",
                 element: <Signup/>
+            },
+            {
+                path: "/auth/forgot/password",
+                element: <ForgotPassword/>
+            },
+            {
+                path: "/auth/find/email",
+                element: <FindEmail/>
             }
         ]
     }

@@ -1,42 +1,51 @@
 import React, {useState} from 'react';
-import {Button, Col, Container, Form, Row} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Button, Container, Form} from "react-bootstrap";
 
-const Login = () => {
+const FindEmail = () => {
 
-    const [email, setEmail] = useState("")
+    const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
-
-
 
     const submitHandler = async (e) => {
         e.preventDefault()
+
         const userInput = {
-            email : email,
+            userName : userName,
             password : password
         }
         console.log(userInput)
     }
+
+
+
 
     return (
         <Container>
             <Form onSubmit={submitHandler}>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
+                    <Form.Label><b>닉네임</b></Form.Label>
+                    <br/>
                     <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                        다른 유저와 겹치지 않도록 입력해주세요.(2~12자)
                     </Form.Text>
+                    <Form.Control
+                        type="text"
+                        placeholder="Enter user name"
+                        value={userName}
+                        onChange={e => setUserName(e.target.value)}
+                    />
+
                 </Form.Group>
 
+               
+
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label><b>비밀번호</b></Form.Label>
+                    <br/>
+                    <Form.Text className="text-muted">
+                        영문 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.
+                    </Form.Text>
                     <Form.Control
                         type="password"
                         placeholder="Password"
@@ -45,21 +54,16 @@ const Login = () => {
                     />
                 </Form.Group>
 
-                <Row>
-                    <Link to={`/auth/find/email`}>
-                        <Col md={4}>이메일 찾기</Col>
-                    </Link>
-                    <Link to={`/auth/forgot/password`}>
-                         <Col md={{ span: 4, offset: 4 }}>비밀번호 찾기</Col>
-                    </Link>
-                </Row>
+               
+
+
 
                 <Button variant="primary" type="submit">
-                    Submit
+                    이메일 찾기
                 </Button>
             </Form>
         </Container>
     );
 };
 
-export default Login;
+export default FindEmail;
